@@ -1,10 +1,6 @@
 <section>
     <header>
-        <h5 class="text-lg font-medium text-gray-900">
-            <b>⚜︎ Оновити пароль ⚜︎</b>
-        </h3>
-
-
+        <h2>Оновити пароль</h2>
     </header>
 
 

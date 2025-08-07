@@ -1,8 +1,6 @@
 <section>
     <header>
-        <h5 class="font-medium text-gray-900">
-           <b>⚜︎ Інформація Профілю ⚜︎</b>
-        </h5>
+        <h2>Інформація профілю</h2>
 
 
         <style>

@@ -1,8 +1,6 @@
 <section class="space-y-6">
     <header>
-       <b><h5 class="text-lg font-medium text-gray-900">
-               ✯ Видалити акаунт ✯
-           </h5></b>
+        <h2>Видалити акаунт</h2>
     </header>
 
     <b class="text-center"><x-danger-button
