@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /vendor/
 node_modules/
 npm-debug.log
@@ -28,3 +29,7 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+=======
+.env
+.idea
+>>>>>>> 8dfa7e7 (first init)
