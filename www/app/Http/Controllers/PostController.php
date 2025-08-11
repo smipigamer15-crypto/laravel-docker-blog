@@ -82,15 +82,6 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('posts.index')->with('success', 'Пост видалено успішно');
     }
-    public function search(Request $request)
-    {
-        $query = $request->input('query'); // Отримуємо запит пошуку
-        $posts = Post::where('title', 'LIKE', "%{$query}%")
-            ->orWhere('content', 'LIKE', "%{$query}%")
-            ->get(); // Пошук у базі даних
-
-        return view('posts.search', compact('posts', 'query'));
-    }
 
     public function like(Request $request, $postId)
     {

@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>Home</title>
+
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -539,6 +541,11 @@
             color: var(--contrast-color);
             transform: rotate(180deg);
         }
+
+        .navmenu .dropdown > span {
+            padding-left: 20px; /* або margin-left: 10px; */
+        }
+
 
         .navmenu .dropdown ul {
             position: static;
@@ -1740,7 +1747,7 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home<br></a></li>
+                <li><a href="#hero">Home<br></a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#post">Story</a></li>
                 <li class="dropdown"><span>  {{ Auth::user()->name }} </span> <i class="bi bi-chevron-down toggle-dropdown"></i>
@@ -1766,70 +1773,6 @@
 
     </div>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{--<!-- Кнопка для вертання на початок сторінки -->--}}
-{{--<button class="back-to-top hidden" id="backToTopBtn">--}}
-{{--    <div class="progress-ring"></div>--}}
-{{--    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">--}}
-{{--        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>--}}
-{{--    </svg>--}}
-{{--</button>--}}
-
-
-
-
-
-
-{{--<!-- Скріпт Кнопки для вертання на початок сторінки -->--}}
-
-{{--<script>--}}
-{{--    // Отримуємо кнопку--}}
-{{--    const backToTopBtn = document.getElementById('backToTopBtn');--}}
-{{--    const progressRing = document.querySelector('.progress-ring');--}}
-
-{{--    // Функція для оновлення прогресу--}}
-{{--    function updateProgress() {--}}
-{{--        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;--}}
-{{--        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;--}}
-{{--        const scrollPercentage = (scrollTop / docHeight) * 100;--}}
-{{--        const degree = (scrollPercentage * 3.6); // 360 градусів / 100 = 3.6--}}
-{{--        progressRing.style.background = `conic-gradient(#555 ${degree}deg, #333 ${degree}deg 100%)`;--}}
-{{--    }--}}
-
-{{--    // Показати кнопку, коли прокрутили вниз--}}
-{{--    window.onscroll = function () {--}}
-{{--        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {--}}
-{{--            backToTopBtn.classList.remove('hidden');--}}
-{{--        } else {--}}
-{{--            backToTopBtn.classList.add('hidden');--}}
-{{--        }--}}
-
-{{--        // Оновлення прогресу--}}
-{{--        updateProgress();--}}
-{{--    };--}}
-
-{{--    // Прокрутка до верху при натисканні на кнопку--}}
-{{--    backToTopBtn.addEventListener('click', function () {--}}
-{{--        window.scrollTo({--}}
-{{--            top: 0,--}}
-{{--            behavior: 'smooth'--}}
-{{--        });--}}
-{{--    });--}}
-{{--</script>--}}
-
 
 
 
@@ -1894,213 +1837,6 @@
 </section><!-- /About Section -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Contact Section -->
-{{--<section id="contact" class="contact section">--}}
-
-{{--    <!-- Section Title -->--}}
-{{--    <div class="container section-title" data-aos="fade-up">--}}
-{{--        <h2>Contact</h2>--}}
-{{--        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>--}}
-{{--    </div><!-- End Section Title -->--}}
-
-{{--    <div class="container" data-aos="fade-up" data-aos-delay="100">--}}
-
-{{--        <div class="mb-5">--}}
-{{--            <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>--}}
-{{--        </div><!-- End Google Maps -->--}}
-
-{{--        <div class="row gy-4">--}}
-
-{{--            <div class="col-md-6">--}}
-{{--                <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">--}}
-{{--                    <i class="icon bi bi-geo-alt flex-shrink-0"></i>--}}
-{{--                    <div>--}}
-{{--                        <h3>Address</h3>--}}
-{{--                        <p>A108 Adam Street, New York, NY 535022</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div><!-- End Info Item -->--}}
-
-{{--            <div class="col-md-6">--}}
-{{--                <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">--}}
-{{--                    <i class="icon bi bi-telephone flex-shrink-0"></i>--}}
-{{--                    <div>--}}
-{{--                        <h3>Call Us</h3>--}}
-{{--                        <p>+1 5589 55488 55</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div><!-- End Info Item -->--}}
-
-{{--            <div class="col-md-6">--}}
-{{--                <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">--}}
-{{--                    <i class="icon bi bi-envelope flex-shrink-0"></i>--}}
-{{--                    <div>--}}
-{{--                        <h3>Email Us</h3>--}}
-{{--                        <p>info@example.com</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div><!-- End Info Item -->--}}
-
-{{--            <div class="col-md-6">--}}
-{{--                <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">--}}
-{{--                    <i class="icon bi bi-clock flex-shrink-0"></i>--}}
-{{--                    <div>--}}
-{{--                        <h3>Opening Hours<br></h3>--}}
-{{--                        <p><strong>Mon-Sat:</strong> 11AM - 23PM; <strong>Sunday:</strong> Closed</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div><!-- End Info Item -->--}}
-
-{{--        </div>--}}
-
-{{--        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">--}}
-{{--            <div class="row gy-4">--}}
-
-{{--                <div class="col-md-6">--}}
-{{--                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-6 ">--}}
-{{--                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-12">--}}
-{{--                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-12">--}}
-{{--                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-12 text-center">--}}
-{{--                    <div class="loading">Loading</div>--}}
-{{--                    <div class="error-message"></div>--}}
-{{--                    <div class="sent-message">Your message has been sent. Thank you!</div>--}}
-
-{{--                    <button type="submit">Send Message</button>--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-{{--        </form><!-- End Contact Form -->--}}
-
-{{--    </div>--}}
-
-{{--</section><!-- /Contact Section -->--}}
-
-
-{{--<div class="container">--}}
-{{--<section id="contact" class="contact section php11">--}}
-{{--            <!-- Початок постів -->--}}
-{{--            @forelse ($posts as $post)--}}
-{{--            <h1 class="php12 post1">{{ $post->title }}</h1>--}}
-{{--            <p class=" post-content post1q">{{ $post->content }}</p>--}}
-
-{{--                                <!-- Кнопки для лайка і коментаря -->--}}
-{{--                                <div class="d-flex justify-content-start align-items-center post1">--}}
-{{--                                    <button class="reaction-button {{ $post->likes->contains('user_id', auth()->id()) ? 'active' : '' }}"--}}
-{{--                                            id="like-btn-{{ $post->id }}"--}}
-{{--                                            onclick="event.preventDefault(); toggleLike({{ $post->id }})">--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-emoji-laughing-fill" viewBox="0 0 16 16">--}}
-{{--                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5s-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5m5.331 3a1 1 0 0 1 0 1A5 5 0 0 1 8 13a5 5 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5m-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5s-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235"/>--}}
-{{--                                        </svg>--}}
-
-{{--                                    </button>--}}
-{{--                                </div>--}}
-
-{{--                                <!-- Кнопки редагування та видалення поста -->--}}
-
-{{--                                    <div class="mt-3 text-end">--}}
-{{--                                        <a href="{{ route('posts.edit', $post) }}" class="action-button edit-button" title="Редагувати">--}}
-{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pen" viewBox="0 0 16 16">--}}
-{{--                                                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>--}}
-{{--                                            </svg>--}}
-{{--                                        </a>--}}
-
-{{--                                        <form action="{{ route('posts.destroy', $post) }}" method="POST" style="display:inline;">--}}
-{{--                                            @csrf--}}
-{{--                                            @method('DELETE')--}}
-{{--                                            <button type="submit" class="action-button delete-button post2" title="Видалити">--}}
-{{--                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pen" viewBox="0 0 16 16">--}}
-{{--                                                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>--}}
-{{--                                                </svg>--}}
-{{--                                            </button>--}}
-{{--                                        </form>--}}
-{{--                                    </div>--}}
-{{--                <form class="php-email-form" action="{{ route('comments.store') }}" method="POST">--}}
-{{--                    <h6 class="php12">Коментарі:</h6>--}}
-{{--                    @csrf--}}
-{{--                    <input type="hidden" name="post_id" value="{{ $post->id }}">--}}
-{{--                    <textarea class="form-control" name="comment" rows="3" placeholder="Напишіть коментар..."></textarea>--}}
-{{--                    <button type="submit" class="btn btn-primary btn-sm mt-2">Додати коментар</button>--}}
-{{--                </form>--}}
-
-{{--                <!-- Список коментарів -->--}}
-{{--                @foreach ($post->comments as $comment)--}}
-{{--                    <div class="comment mt-2">--}}
-{{--                        <p><strong class="comment-author">{{ $comment->user->name }}:</strong> {{ $comment->content }}</p>--}}
-
-{{--                        @if (auth()->id() === $comment->user_id)--}}
-{{--                            <!-- Кнопки редагування та видалення коментаря -->--}}
-{{--                            <div class="mt-1">--}}
-
-{{--                                <!-- Форма видалення -->--}}
-{{--                                <div class="mt-3 text-end">--}}
-{{--                                <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" style="display:inline;">--}}
-{{--                                    @csrf--}}
-{{--                                    @method('DELETE')--}}
-{{--                                    <button type="submit" class="btn btn-danger btn-sm">--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">--}}
-{{--                                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>--}}
-{{--                                        </svg>--}}
-{{--                                    </button>--}}
-{{--                                </form>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-
-
-
-{{--                @empty--}}
-{{--        <p><b class="text-danger">Немає постів...</b></p>--}}
-{{--               @endforelse--}}
-{{--            <!-- Кінець постів -->--}}
-
-
-
-{{--</section>--}}
-{{--</div>--}}
 
 
 
@@ -2695,7 +2431,187 @@
     </footer>
 
 
+<script>
+    /**
+     * Template Name: Yummy
+     * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+     * Updated: Aug 07 2024 with Bootstrap v5.3.3
+     * Author: BootstrapMade.com
+     * License: https://bootstrapmade.com/license/
+     */
 
+    (function() {
+        "use strict";
+
+        /**
+         * Apply .scrolled class to the body as the page is scrolled down
+         */
+        function toggleScrolled() {
+            const selectBody = document.querySelector('body');
+            const selectHeader = document.querySelector('#header');
+            if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+            window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+        }
+
+        document.addEventListener('scroll', toggleScrolled);
+        window.addEventListener('load', toggleScrolled);
+
+        /**
+         * Mobile nav toggle
+         */
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+        function mobileNavToogle() {
+            document.querySelector('body').classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+        }
+        mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+        /**
+         * Hide mobile nav on same-page/hash links
+         */
+        document.querySelectorAll('#navmenu a').forEach(navmenu => {
+            navmenu.addEventListener('click', () => {
+                if (document.querySelector('.mobile-nav-active')) {
+                    mobileNavToogle();
+                }
+            });
+
+        });
+
+        /**
+         * Toggle mobile nav dropdowns
+         */
+        document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+            navmenu.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.parentNode.classList.toggle('active');
+                const dropdownMenu = this.parentNode.querySelector('ul');
+                if (dropdownMenu) {
+                    dropdownMenu.classList.toggle('dropdown-active');
+                }
+                e.stopImmediatePropagation();
+            });
+        });
+
+        /**
+         * Preloader
+         */
+        const preloader = document.querySelector('#preloader');
+        if (preloader) {
+            window.addEventListener('load', () => {
+                preloader.remove();
+            });
+        }
+
+        /**
+         * Scroll top button
+         */
+        let scrollTop = document.querySelector('.scroll-top');
+
+        function toggleScrollTop() {
+            if (scrollTop) {
+                window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+            }
+        }
+        scrollTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('load', toggleScrollTop);
+        document.addEventListener('scroll', toggleScrollTop);
+
+        /**
+         * Animation on scroll function and init
+         */
+        function aosInit() {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        }
+        window.addEventListener('load', aosInit);
+
+        /**
+         * Initiate glightbox
+         */
+        const glightbox = GLightbox({
+            selector: '.glightbox'
+        });
+
+        /**
+         * Initiate Pure Counter
+         */
+        new PureCounter();
+
+        /**
+         * Init swiper sliders
+         */
+        function initSwiper() {
+            document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+                let config = JSON.parse(
+                    swiperElement.querySelector(".swiper-config").innerHTML.trim()
+                );
+
+                if (swiperElement.classList.contains("swiper-tab")) {
+                    initSwiperWithCustomPagination(swiperElement, config);
+                } else {
+                    new Swiper(swiperElement, config);
+                }
+            });
+        }
+
+        window.addEventListener("load", initSwiper);
+
+        /**
+         * Correct scrolling position upon page load for URLs containing hash links.
+         */
+        window.addEventListener('load', function(e) {
+            if (window.location.hash) {
+                if (document.querySelector(window.location.hash)) {
+                    setTimeout(() => {
+                        let section = document.querySelector(window.location.hash);
+                        let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+                        window.scrollTo({
+                            top: section.offsetTop - parseInt(scrollMarginTop),
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+
+        /**
+         * Navmenu Scrollspy
+         */
+        let navmenulinks = document.querySelectorAll('.navmenu a');
+
+        function navmenuScrollspy() {
+            navmenulinks.forEach(navmenulink => {
+                if (!navmenulink.hash) return;
+                let section = document.querySelector(navmenulink.hash);
+                if (!section) return;
+                let position = window.scrollY + 200;
+                if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+                    document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+                    navmenulink.classList.add('active');
+                } else {
+                    navmenulink.classList.remove('active');
+                }
+            })
+        }
+        window.addEventListener('load', navmenuScrollspy);
+        document.addEventListener('scroll', navmenuScrollspy);
+
+    })();
+</script>
 
 <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>

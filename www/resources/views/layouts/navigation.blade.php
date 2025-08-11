@@ -1,3 +1,5 @@
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <!-- Fonts -->
@@ -100,136 +102,7 @@
         font-family: var(--heading-font);
     }
 
-    /* Pulsating Play Button
-    ------------------------------*/
-    .pulsating-play-btn {
-        width: 94px;
-        height: 94px;
-        background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
-        border-radius: 50%;
-        display: block;
-        position: relative;
-        overflow: hidden;
-    }
 
-    .pulsating-play-btn:before {
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        animation-delay: 0s;
-        animation: pulsate-play-btn 2s;
-        animation-direction: forwards;
-        animation-iteration-count: infinite;
-        animation-timing-function: steps;
-        opacity: 1;
-        border-radius: 50%;
-        border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
-        top: -15%;
-        left: -15%;
-        background: rgba(198, 16, 0, 0);
-    }
-
-    .pulsating-play-btn:after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-40%) translateY(-50%);
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #fff;
-        z-index: 100;
-        transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    .pulsating-play-btn:hover:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-40%) translateY(-50%);
-        width: 0;
-        height: 0;
-        border: none;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #fff;
-        z-index: 200;
-        animation: none;
-        border-radius: 0;
-    }
-
-    .pulsating-play-btn:hover:after {
-        border-left: 15px solid var(--accent-color);
-        transform: scale(20);
-    }
-
-    @keyframes pulsate-play-btn {
-        0% {
-            transform: scale(0.6, 0.6);
-            opacity: 1;
-        }
-
-        100% {
-            transform: scale(1, 1);
-            opacity: 0;
-        }
-    }
-
-    /* PHP Email Form Messages
-    ------------------------------*/
-    .php-email-form .error-message {
-        display: none;
-        background: #df1529;
-        color: #ffffff;
-        text-align: left;
-        padding: 15px;
-        margin-bottom: 24px;
-        font-weight: 600;
-    }
-
-    .php-email-form .sent-message {
-        display: none;
-        color: #ffffff;
-        background: #059652;
-        text-align: center;
-        padding: 15px;
-        margin-bottom: 24px;
-        font-weight: 600;
-    }
-
-    .php-email-form .loading {
-        display: none;
-        background: var(--surface-color);
-        text-align: center;
-        padding: 15px;
-        margin-bottom: 24px;
-    }
-
-    .php-email-form .loading:before {
-        content: "";
-        display: inline-block;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        margin: 0 10px -6px 0;
-        border: 3px solid var(--accent-color);
-        border-top-color: var(--surface-color);
-        animation: php-email-form-loading 1s linear infinite;
-    }
-
-    @keyframes php-email-form-loading {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
 
     /*--------------------------------------------------------------
     # Global Header
@@ -562,1064 +435,6 @@
         }
     }
 
-    /*--------------------------------------------------------------
-    # Global Footer
-    --------------------------------------------------------------*/
-    .footer {
-        --heading-font: var(--default-font);
-        color: var(--default-color);
-        background-color: var(--background-color);
-        font-size: 14px;
-        padding: 40px 0;
-        position: relative;
-    }
-
-    .footer .icon {
-        color: var(--accent-color);
-        margin-right: 15px;
-        font-size: 24px;
-        line-height: 0;
-    }
-
-    .footer h4 {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
-
-    .footer .address p {
-        margin-bottom: 0px;
-    }
-
-    .footer .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-        font-size: 16px;
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-        margin-right: 10px;
-        transition: 0.3s;
-    }
-
-    .footer .social-links a:hover {
-        color: var(--accent-color);
-        border-color: var(--accent-color);
-    }
-
-    .footer .copyright {
-        padding-top: 20px;
-        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    }
-
-    .footer .copyright p {
-        margin-bottom: 0;
-    }
-
-    .footer .credits {
-        margin-top: 5px;
-        font-size: 13px;
-    }
-
-    /*--------------------------------------------------------------
-    # Preloader
-    --------------------------------------------------------------*/
-    #preloader {
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        overflow: hidden;
-        background-color: var(--background-color);
-        transition: all 0.6s ease-out;
-        width: 100%;
-        height: 100vh;
-    }
-
-    #preloader:before,
-    #preloader:after {
-        content: "";
-        position: absolute;
-        border: 4px solid var(--accent-color);
-        border-radius: 50%;
-        animation: animate-preloader 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-    }
-
-    #preloader:after {
-        animation-delay: -0.5s;
-    }
-
-    @keyframes animate-preloader {
-        0% {
-            width: 10px;
-            height: 10px;
-            top: calc(50% - 5px);
-            left: calc(50% - 5px);
-            opacity: 1;
-        }
-
-        100% {
-            width: 72px;
-            height: 72px;
-            top: calc(50% - 36px);
-            left: calc(50% - 36px);
-            opacity: 0;
-        }
-    }
-
-    /*--------------------------------------------------------------
-    # Scroll Top Button
-    --------------------------------------------------------------*/
-    .scroll-top {
-        position: fixed;
-        visibility: hidden;
-        opacity: 0;
-        right: 15px;
-        bottom: -15px;
-        z-index: 99999;
-        background-color: var(--accent-color);
-        width: 44px;
-        height: 44px;
-        border-radius: 50px;
-        transition: all 0.4s;
-    }
-
-    .scroll-top i {
-        font-size: 24px;
-        color: var(--contrast-color);
-        line-height: 0;
-    }
-
-    .scroll-top:hover {
-        background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-        color: var(--contrast-color);
-    }
-
-    .scroll-top.active {
-        visibility: visible;
-        opacity: 1;
-        bottom: 15px;
-    }
-
-    /*--------------------------------------------------------------
-    # Disable aos animation delay on mobile devices
-    --------------------------------------------------------------*/
-    @media screen and (max-width: 768px) {
-        [data-aos-delay] {
-            transition-delay: 0 !important;
-        }
-    }
-
-    /*--------------------------------------------------------------
-    # Global Page Titles & Breadcrumbs
-    --------------------------------------------------------------*/
-    .page-title {
-        --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-        color: var(--default-color);
-        background-color: var(--background-color);
-        padding: 120px 0;
-        text-align: center;
-        position: relative;
-    }
-
-    .page-title h1 {
-        font-size: 42px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        font-family: var(--default-font);
-    }
-
-    .page-title .breadcrumbs ol {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    .page-title .breadcrumbs ol li+li {
-        padding-left: 10px;
-    }
-
-    .page-title .breadcrumbs ol li+li::before {
-        content: "/";
-        display: inline-block;
-        padding-right: 10px;
-        color: color-mix(in srgb, var(--default-color), transparent 70%);
-    }
-
-    /*--------------------------------------------------------------
-    # Global Sections
-    --------------------------------------------------------------*/
-    section,
-    .section {
-        color: var(--default-color);
-        background-color: var(--background-color);
-        padding: 60px 0;
-        scroll-margin-top: 92px;
-        overflow: clip;
-    }
-
-    @media (max-width: 1199px) {
-
-        section,
-        .section {
-            scroll-margin-top: 56px;
-        }
-    }
-
-    /*--------------------------------------------------------------
-    # Global Section Titles
-    --------------------------------------------------------------*/
-    .section-title {
-        text-align: center;
-        padding-bottom: 60px;
-        position: relative;
-        margin-top: 60px;
-    }
-
-    .section-title h2 {
-        font-size: 13px;
-        letter-spacing: 1px;
-        font-weight: 400;
-        padding: 0;
-        margin: 0;
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-        display: inline-block;
-        text-transform: uppercase;
-        font-family: var(--default-font);
-    }
-
-    .section-title p {
-        color: var(--heading-color);
-        margin: 10px 0 0 0;
-        font-size: 48px;
-        font-weight: 500;
-        font-family: var(--heading-font);
-    }
-
-    .section-title p .description-title {
-        color: var(--accent-color);
-    }
-
-    /*--------------------------------------------------------------
-    # Hero Section
-    --------------------------------------------------------------*/
-    .hero {
-        width: 100%;
-        min-height: 60vh;
-        position: relative;
-        padding: 60px 0;
-        display: flex;
-        align-items: center;
-    }
-
-    .hero h1 {
-        margin: 0;
-        font-size: 64px;
-        font-weight: 700;
-    }
-
-    .hero p {
-        color: color-mix(in srgb, var(--default-color), transparent 30%);
-        margin: 5px 0 30px 0;
-        font-size: 20px;
-        font-weight: 400;
-    }
-
-    .hero .btn-get-started {
-        color: var(--contrast-color);
-        background: var(--accent-color);
-        font-weight: 400;
-        font-size: 15px;
-        letter-spacing: 1px;
-        display: inline-block;
-        padding: 10px 28px 12px 28px;
-        border-radius: 50px;
-        transition: 0.5s;
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero .btn-get-started:hover {
-        color: var(--contrast-color);
-        background: color-mix(in srgb, var(--accent-color), transparent 15%);
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero .btn-watch-video {
-        font-size: 16px;
-        transition: 0.5s;
-        margin-left: 25px;
-        color: var(--default-color);
-        font-weight: 500;
-    }
-
-    .hero .btn-watch-video i {
-        color: var(--accent-color);
-        font-size: 32px;
-        transition: 0.3s;
-        line-height: 0;
-        margin-right: 8px;
-    }
-
-    .hero .btn-watch-video:hover {
-        color: var(--accent-color);
-    }
-
-    .hero .btn-watch-video:hover i {
-        color: color-mix(in srgb, var(--accent-color), transparent 15%);
-    }
-
-    .hero .animated {
-        animation: up-down 2s ease-in-out infinite alternate-reverse both;
-    }
-
-    @media (max-width: 640px) {
-        .hero h1 {
-            font-size: 28px;
-            line-height: 36px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            line-height: 24px;
-            margin-bottom: 30px;
-        }
-
-        .hero .btn-get-started,
-        .hero .btn-watch-video {
-            font-size: 13px;
-        }
-    }
-
-    @keyframes up-down {
-        0% {
-            transform: translateY(10px);
-        }
-
-        100% {
-            transform: translateY(-10px);
-        }
-    }
-
-    /*--------------------------------------------------------------
-    # About Section
-    --------------------------------------------------------------*/
-    .about h3 {
-        font-weight: 700;
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-
-    .about .book-a-table {
-        text-align: center;
-        border: 4px solid color-mix(in srgb, var(--default-color), transparent 30%);
-        padding: 22px;
-    }
-
-    .about .book-a-table h3 {
-        font-family: var(--default-font);
-        margin: 0 0 0 0;
-        font-size: 24px;
-    }
-
-    .about .book-a-table p {
-        color: var(--accent-color);
-        font-weight: 500;
-        font-size: 28px;
-        margin: 0;
-    }
-
-    .about .fst-italic {
-        color: color-mix(in srgb, var(--default-color), var(--contrast-color) 50%);
-    }
-
-    .about .content ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .about .content ul li {
-        padding: 0 0 10px 30px;
-        position: relative;
-    }
-
-    .about .content ul i {
-        position: absolute;
-        font-size: 20px;
-        left: 0;
-        top: -3px;
-        color: var(--accent-color);
-    }
-
-    .about .content p:last-child {
-        margin-bottom: 0;
-    }
-
-    .about .pulsating-play-btn {
-        position: absolute;
-        left: calc(50% - 47px);
-        top: calc(50% - 47px);
-    }
-
-    /*--------------------------------------------------------------
-    # Why Us Section
-    --------------------------------------------------------------*/
-    .why-us .why-box {
-        color: var(--contrast-color);
-        background: var(--accent-color);
-        padding: 30px;
-    }
-
-    .why-us .why-box h3 {
-        color: var(--contrast-color);
-        font-family: var(--default-font);
-        font-weight: 700;
-        font-size: 34px;
-        margin-bottom: 30px;
-    }
-
-    .why-us .why-box p {
-        margin-bottom: 30px;
-    }
-
-    .why-us .why-box .more-btn {
-        display: inline-block;
-        background: color-mix(in srgb, var(--contrast-color), transparent 85%);
-        padding: 8px 40px 10px 40px;
-        color: var(--contrast-color);
-        transition: all ease-in-out 0.4s;
-        border-radius: 50px;
-    }
-
-    .why-us .why-box .more-btn i {
-        font-size: 14px;
-    }
-
-    .why-us .why-box .more-btn:hover {
-        color: var(--accent-color);
-        background: var(--surface-color);
-    }
-
-    .why-us .icon-box {
-        background-color: var(--surface-color);
-        text-align: center;
-        padding: 40px 30px;
-        width: 100%;
-        height: 100%;
-        border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    }
-
-    .why-us .icon-box i {
-        color: var(--accent-color);
-        font-size: 32px;
-        margin-bottom: 30px;
-        background: color-mix(in srgb, var(--accent-color), transparent 95%);
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 72px;
-        height: 72px;
-        transition: 0.3s;
-    }
-
-    .why-us .icon-box h4 {
-        font-size: 20px;
-        font-weight: 500;
-        margin: 0 0 30px 0;
-        font-family: var(--default-font);
-    }
-
-    .why-us .icon-box p {
-        font-size: 15px;
-        color: color-mix(in srgb, var(--default-color), transparent 30%);
-    }
-
-    .why-us .icon-box:hover i {
-        color: var(--contrast-color);
-        background: var(--accent-color);
-    }
-
-    /*--------------------------------------------------------------
-    # Stats Section
-    --------------------------------------------------------------*/
-    .stats {
-        position: relative;
-        padding: 120px 0;
-    }
-
-    .stats img {
-        position: absolute;
-        inset: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-    }
-
-    .stats:before {
-        content: "";
-        background: color-mix(in srgb, var(--background-color), transparent 40%);
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-    }
-
-    .stats .container {
-        position: relative;
-        z-index: 3;
-    }
-
-    .stats .stats-item {
-        padding: 30px;
-        width: 100%;
-    }
-
-    .stats .stats-item span {
-        font-size: 48px;
-        display: block;
-        color: var(--default-color);
-        font-weight: 700;
-    }
-
-    .stats .stats-item p {
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-        font-weight: 700;
-        color: color-mix(in srgb, var(--default-color), transparent 40%);
-    }
-
-    /*--------------------------------------------------------------
-    # Menu Section
-    --------------------------------------------------------------*/
-    .menu .nav-tabs {
-        border: 0;
-    }
-
-    .menu .nav-link {
-        background-color: var(--background-color);
-        color: color-mix(in srgb, var(--default-color), transparent 20%);
-        margin: 0 15px;
-        padding: 10px 5px;
-        transition: 0.3s;
-        border-radius: 0;
-        cursor: pointer;
-        height: 100%;
-        border: 0;
-        border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
-    }
-
-    @media (max-width: 575px) {
-        .menu .nav-link {
-            margin: 0 10px;
-            padding: 10px 0;
-        }
-    }
-
-    .menu .nav-link i {
-        padding-right: 15px;
-        font-size: 48px;
-    }
-
-    .menu .nav-link h4 {
-        font-size: 18px;
-        font-weight: 400;
-        margin: 0;
-        font-family: var(--default-font);
-    }
-
-    @media (max-width: 575px) {
-        .menu .nav-link h4 {
-            font-size: 16px;
-        }
-    }
-
-    .menu .nav-link:hover {
-        color: var(--accent-color);
-        border-color: var(--accent-color);
-    }
-
-    .menu .nav-link.active {
-        background-color: var(--background-color);
-        color: var(--accent-color);
-        border-color: var(--accent-color);
-    }
-
-    .menu .tab-content .tab-header {
-        padding: 30px 0;
-    }
-
-    .menu .tab-content .tab-header p {
-        font-size: 14px;
-        text-transform: uppercase;
-        color: color-mix(in srgb, var(--default-color), transparent 20%);
-        margin-bottom: 0;
-    }
-
-    .menu .tab-content .tab-header h3 {
-        font-size: 48px;
-        font-weight: 700;
-        color: var(--accent-color);
-    }
-
-    .menu .tab-content .menu-item {
-        text-align-last: center;
-    }
-
-    .menu .tab-content .menu-item .menu-img {
-        padding: 0 60px;
-        margin-bottom: 15px;
-    }
-
-    .menu .tab-content .menu-item h4 {
-        font-size: 24px;
-        font-weight: 400;
-        margin-bottom: 5px;
-        font-family: var(--default-font);
-    }
-
-    .menu .tab-content .menu-item .ingredients {
-        font-family: var(--nav-font);
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-        margin-bottom: 5px;
-    }
-
-    .menu .tab-content .menu-item .price {
-        font-size: 24px;
-        font-weight: 700;
-        color: var(--accent-color);
-    }
-
-    /*--------------------------------------------------------------
-    # Testimonials Section
-    --------------------------------------------------------------*/
-    .testimonials .testimonials-carousel,
-    .testimonials .testimonials-slider {
-        overflow: hidden;
-    }
-
-    .testimonials .testimonial-item .testimonial-content {
-        border-left: 3px solid var(--accent-color);
-        padding-left: 30px;
-    }
-
-    .testimonials .testimonial-item .testimonial-img {
-        border-radius: 50%;
-        border: 4px solid var(--background-color);
-        margin: 0 auto;
-    }
-
-    .testimonials .testimonial-item h3 {
-        font-size: 20px;
-        font-weight: bold;
-        margin: 10px 0 5px 0;
-    }
-
-    .testimonials .testimonial-item h4 {
-        font-size: 14px;
-        color: color-mix(in srgb, var(--default-color), transparent 40%);
-        margin: 0 0 10px 0;
-    }
-
-    .testimonials .testimonial-item .stars i {
-        color: #ffc107;
-        margin: 0 1px;
-    }
-
-    .testimonials .testimonial-item .quote-icon-left,
-    .testimonials .testimonial-item .quote-icon-right {
-        color: color-mix(in srgb, var(--accent-color), transparent 50%);
-        font-size: 26px;
-        line-height: 0;
-    }
-
-    .testimonials .testimonial-item .quote-icon-left {
-        display: inline-block;
-        left: -5px;
-        position: relative;
-    }
-
-    .testimonials .testimonial-item .quote-icon-right {
-        display: inline-block;
-        right: -5px;
-        position: relative;
-        top: 10px;
-        transform: scale(-1, -1);
-    }
-
-    .testimonials .testimonial-item p {
-        font-style: italic;
-    }
-
-    .testimonials .swiper-wrapper {
-        height: auto;
-    }
-
-    .testimonials .swiper-pagination {
-        margin-top: 30px;
-        position: relative;
-    }
-
-    .testimonials .swiper-pagination .swiper-pagination-bullet {
-        width: 12px;
-        height: 12px;
-        background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-        opacity: 1;
-    }
-
-    .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-        background-color: var(--accent-color);
-    }
-
-    /*--------------------------------------------------------------
-    # Events Section
-    --------------------------------------------------------------*/
-    .events .container-fluid {
-        padding: 0;
-    }
-
-    .events .event-item {
-        background-size: cover;
-        background-position: cente;
-        min-height: 600px;
-        padding: 30px;
-    }
-
-    @media (max-width: 575px) {
-        .events .event-item {
-            min-height: 500px;
-        }
-    }
-
-    .events .event-item:before {
-        content: "";
-        background: rgba(0, 0, 0, 0.6);
-        position: absolute;
-        inset: 0;
-    }
-
-    .events .event-item h3 {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 5px;
-        color: #ffffff;
-        position: relative;
-    }
-
-    .events .event-item .price {
-        color: #ffffff;
-        border-bottom: 2px solid var(--accent-color);
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        position: relative;
-    }
-
-    .events .event-item .description {
-        margin-bottom: 0;
-        color: rgba(255, 255, 255, 0.8);
-        position: relative;
-    }
-
-    .events .swiper-wrapper {
-        height: auto;
-    }
-
-    .events .swiper-pagination {
-        margin-top: 20px;
-        position: relative;
-    }
-
-    .events .swiper-pagination .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-        opacity: 1;
-    }
-
-    .events .swiper-pagination .swiper-pagination-bullet-active {
-        background-color: var(--accent-color);
-    }
-
-    /*--------------------------------------------------------------
-    # Chefs Section
-    --------------------------------------------------------------*/
-    .chefs .team-member {
-        background-color: var(--surface-color);
-        box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-align: center;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-
-    .chefs .team-member .member-img {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .chefs .team-member .member-img:after {
-        position: absolute;
-        content: "";
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        height: 100%;
-        background-color: var(--surface-color);
-        -webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;
-        mask: url("../img/team-shape.svg") no-repeat center bottom;
-        -webkit-mask-size: contain;
-        mask-size: contain;
-        z-index: 1;
-    }
-
-    .chefs .team-member .social {
-        position: absolute;
-        right: -100%;
-        top: 30px;
-        opacity: 0;
-        border-radius: 4px;
-        transition: 0.5s;
-        background: color-mix(in srgb, var(--background-color), transparent 60%);
-        z-index: 2;
-    }
-
-    .chefs .team-member .social a {
-        transition: color 0.3s;
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-        margin: 15px 12px;
-        display: block;
-        line-height: 0;
-        text-align: center;
-    }
-
-    .chefs .team-member .social a:hover {
-        color: var(--default-color);
-    }
-
-    .chefs .team-member .social i {
-        font-size: 18px;
-    }
-
-    .chefs .team-member .member-info {
-        padding: 10px 15px 20px 15px;
-    }
-
-    .chefs .team-member .member-info h4 {
-        font-weight: 700;
-        margin-bottom: 5px;
-        font-size: 20px;
-        font-family: var(--default-font);
-    }
-
-    .chefs .team-member .member-info span {
-        display: block;
-        font-size: 14px;
-        font-weight: 400;
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-    }
-
-    .chefs .team-member .member-info p {
-        font-style: italic;
-        font-size: 14px;
-        padding-top: 15px;
-        line-height: 26px;
-        color: color-mix(in srgb, var(--default-color), transparent 30%);
-    }
-
-    .chefs .team-member:hover {
-        transform: scale(1.08);
-        box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .chefs .team-member:hover .social {
-        right: 8px;
-        opacity: 1;
-    }
-
-    /*--------------------------------------------------------------
-    # Book A Table Section
-    --------------------------------------------------------------*/
-    .book-a-table .reservation-img {
-        min-height: 500px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .book-a-table .reservation-form-bg {
-        background: color-mix(in srgb, var(--default-color), transparent 97%);
-    }
-
-    .book-a-table .php-email-form {
-        padding: 30px;
-    }
-
-    @media (max-width: 575px) {
-        .book-a-table .php-email-form {
-            padding: 20px;
-        }
-    }
-
-    .book-a-table .php-email-form input[type=text],
-    .book-a-table .php-email-form input[type=email],
-    .book-a-table .php-email-form input[type=number],
-    .book-a-table .php-email-form input[type=date],
-    .book-a-table .php-email-form input[type=time],
-    .book-a-table .php-email-form textarea {
-        font-size: 14px;
-        padding: 10px 15px;
-        box-shadow: none;
-        border-radius: 0;
-        color: var(--default-color);
-        background-color: color-mix(in srgb, var(--background-color), transparent 20%);
-        border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-    }
-
-    .book-a-table .php-email-form input[type=text]:focus,
-    .book-a-table .php-email-form input[type=email]:focus,
-    .book-a-table .php-email-form input[type=number]:focus,
-    .book-a-table .php-email-form input[type=date]:focus,
-    .book-a-table .php-email-form input[type=time]:focus,
-    .book-a-table .php-email-form textarea:focus {
-        border-color: var(--accent-color);
-    }
-
-    .book-a-table .php-email-form input[type=text]::placeholder,
-    .book-a-table .php-email-form input[type=email]::placeholder,
-    .book-a-table .php-email-form input[type=number]::placeholder,
-    .book-a-table .php-email-form input[type=date]::placeholder,
-    .book-a-table .php-email-form input[type=time]::placeholder,
-    .book-a-table .php-email-form textarea::placeholder {
-        color: color-mix(in srgb, var(--default-color), transparent 70%);
-    }
-
-    .book-a-table .php-email-form button[type=submit] {
-        color: var(--contrast-color);
-        background: var(--accent-color);
-        border: 0;
-        padding: 14px 60px;
-        transition: 0.4s;
-        border-radius: 4px;
-    }
-
-    .book-a-table .php-email-form button[type=submit]:hover {
-        background: color-mix(in srgb, var(--accent-color), transparent 20%);
-    }
-
-    /*--------------------------------------------------------------
-    # Gallery Section
-    --------------------------------------------------------------*/
-    .gallery {
-        overflow: hidden;
-    }
-
-    .gallery .swiper-wrapper {
-        height: auto;
-    }
-
-    .gallery .swiper-pagination {
-        margin-top: 20px;
-        position: relative;
-    }
-
-    .gallery .swiper-pagination .swiper-pagination-bullet {
-        background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-        border: 0;
-        width: 12px;
-        height: 12px;
-        opacity: 1;
-    }
-
-    .gallery .swiper-pagination .swiper-pagination-bullet-active {
-        background-color: var(--accent-color);
-        opacity: 1;
-    }
-
-    .gallery .swiper-slide-active {
-        text-align: center;
-    }
-
-    @media (min-width: 992px) {
-        .gallery .swiper-wrapper {
-            padding: 40px 0;
-        }
-
-        .gallery .swiper-slide-active {
-            background: var(--background-color);
-            border: 6px solid var(--accent-color);
-            padding: 4px;
-            z-index: 1;
-            transform: scale(1.2);
-            transition: none;
-        }
-    }
-
-    /*--------------------------------------------------------------
-    # Contact Section
-    --------------------------------------------------------------*/
-    .contact .info-item {
-        background-color: var(--surface-color);
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-        padding: 20px 30px;
-    }
-
-    .contact .info-item .icon {
-        color: var(--contrast-color);
-        background-color: var(--accent-color);
-        width: 56px;
-        height: 56px;
-        font-size: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
-        border-radius: 50%;
-        margin-right: 15px;
-    }
-
-    .contact .info-item h3 {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0 0 5px 0;
-        font-family: var(--default-font);
-        color: color-mix(in srgb, var(--default-color), transparent 30%);
-    }
-
-    .contact .info-item p {
-        padding: 0;
-        margin-bottom: 0;
-        font-size: 14px;
-    }
-
-    .contact .info-item .social-links a {
-        font-size: 24px;
-        display: inline-block;
-        line-height: 1;
-        margin: 4px 6px 0 0;
-        transition: 0.3s;
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-    }
-
-    .contact .info-item .social-links a:hover {
-        color: var(--accent-color);
-    }
-
-    .contact .php-email-form {
-        background-color: var(--surface-color);
-        padding: 30px;
-        margin-bottom: -30px;
-        margin-top: -70px;
-
-    }
-
     .php11 {
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         border-radius: 20px;
@@ -1702,88 +517,9 @@
         }
     }
 
-    .contact .php-email-form input[type=text],
-    .contact .php-email-form input[type=email],
-    .contact .php-email-form textarea {
-        color: var(--default-color);
-        background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
-        border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-        font-size: 14px;
-        padding: 10px 15px;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    .contact .php-email-form input[type=text]:focus,
-    .contact .php-email-form input[type=email]:focus,
-    .contact .php-email-form textarea:focus {
-        border-color: var(--accent-color);
-    }
-
-    .contact .php-email-form input[type=text]::placeholder,
-    .contact .php-email-form input[type=email]::placeholder,
-    .contact .php-email-form textarea::placeholder {
-        color: color-mix(in srgb, var(--default-color), transparent 70%);
-    }
-
-    .contact .php-email-form button[type=submit] {
-        color: var(--contrast-color);
-        background: var(--accent-color);
-        border: 0;
-
-        transition: 0.4s;
-        border-radius: 50px;
-    }
-
-    .contact .php-email-form button[type=submit]:hover {
-        background: color-mix(in srgb, var(--accent-color), transparent 20%);
-    }
-
-    /*--------------------------------------------------------------
-    # Starter Section Section
-    --------------------------------------------------------------*/
-    .starter-section {
-        /* Add your styles here */
-    }
-
 
     .profile-container {
         width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .profile-content {
-        display: flex;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .left-column {
-        flex: 2;
-        background-color: #f9f9f9;
-        padding: 15px;
-        border-radius: 10px;
-    }
-
-    .right-column {
-        flex: 1;
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 10px;
-    }
-
-    .post {
-        background-color: #fff;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-
-
-    .profile-container {
         max-width: 1280px;
         margin: 0 auto;
         background-color: white;
@@ -1794,7 +530,9 @@
 
     .cover-photo {
         height: 300px;
-        background: linear-gradient(to bottom, #f0f2f5 50%, #888 100%);
+        /* Замінили градієнт на банер з посилання */
+        background: url('https://st2.depositphotos.com/1006899/8421/i/450/depositphotos_84219350-stock-photo-word-blog-suspended-by-ropes.jpg') no-repeat center center;
+        background-size: cover;
         position: relative;
     }
 
@@ -1815,6 +553,7 @@
         align-items: center;
         padding: 20px;
         position: relative;
+        gap: 20px;
     }
 
     .profile-pic {
@@ -1824,8 +563,12 @@
         background-color: #e4e6eb;
         border: 4px solid white;
         margin-top: -70px;
-        margin-right: 20px;
         position: relative;
+        flex-shrink: 0;
+        /* Додаємо аватарку з другого посилання */
+        background-image: url('https://i.pinimg.com/170x/98/2b/74/982b74047b32e17524ebc23bbcc3897c.jpg');
+        background-size: cover;
+        background-position: center;
     }
 
     .camera-icon {
@@ -1853,6 +596,7 @@
         margin-left: auto;
         display: flex;
         gap: 10px;
+        flex-wrap: wrap;
     }
 
     .actions button {
@@ -1877,6 +621,47 @@
         background-color: #e4e6eb;
     }
 
+    /* --- Мобільна адаптація --- */
+
+    @media (max-width: 768px) {
+        .profile-info {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .profile-pic {
+            margin-top: -90px;
+            width: 120px;
+            height: 120px;
+            border-width: 3px;
+        }
+
+        .profile-details h1 {
+            font-size: 22px;
+        }
+
+        .actions {
+            margin-left: 0;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .actions button {
+            flex: 1 1 45%;
+            font-size: 13px;
+        }
+
+        .actions button a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
 </style>
 
 
@@ -1885,8 +670,6 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
         <a href="{{ route('posts.index') }}" class="logo d-flex align-items-center me-auto me-xl-0">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
             <h1 class="sitename">Loomio</h1>
             <span>.</span>
         </a>
@@ -1897,129 +680,30 @@
 
 <div class="profile-container">
     <div class="cover-photo">
+        <!-- Можна додати кнопку для зміни обкладинки -->
+
     </div>
     <div class="profile-info">
         <div class="profile-pic">
+            <!-- Можна додати іконку для зміни аватарки -->
+
         </div>
         <div class="profile-details">
-            <h1>  {{ Auth::user()->name }} </h1>
-
+            <h1>{{ Auth::user()->name }}</h1>
+            <p>Frontend Developer</p>
         </div>
         <div class="actions">
-            <button class="btn btn-danger add-story"><a class="text-white" href="{{ route('posts.create') }}">+ Add to story</a></button>
-            <button class=""><a href="{{ route('profile.edit') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
-                    </svg> Edit profile</a></button>
-            <button class="btn btn-danger" style="color: white;">
-                <a  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>
-                        <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
-                    </svg> Log Out</a></button>
-
-
+            <button class="add-story"><a href="{{ route('posts.create') }}" class="text-white">+ Add to story</a></button>
+            <button class="edit-profile"><a href="{{ route('profile.edit') }}" class="text-white">Edit profile</a></button>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="more-options text-dark" style="background:none; border:none; cursor:pointer;">
+                    Leave
+                </button>
+            </form>
         </div>
-        {{-- Схована форма для POST logout --}}
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
     </div>
 </div>
-
-
-{{--<!-- Stats Section -->--}}
-{{--<section id="stats" class="stats section dark-background">--}}
-
-{{--    <img  src="{{ asset('images/jojo1.jpg') }}" alt="" data-aos="fade-in">--}}
-
-{{--    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">--}}
-
-
-{{--    </div>--}}
-
-{{--</section><!-- /Stats Section -->--}}
-
-{{--<!-- Section Title -->--}}
-{{--<div class="container section-title" data-aos="fade-up">--}}
-{{--    <h2>Dashboard<br></h2>--}}
-{{--    <p><span>You have successfully logged</span> <span class="description-title">Into the dashboard.</span></p>--}}
-{{--</div><!-- End Section Title -->--}}
-
-
-{{--<div class="login-form">--}}
-{{--<nav x-data="{ open: false }">--}}
-{{--    <!-- Primary Navigation Menu -->--}}
-
-
-{{--            <!-- Settings Dropdown -->--}}
-{{--            <div class="hidden sm:flex sm:items-center sm:ms-6">--}}
-{{--                <x-dropdown align="right" width="48">--}}
-{{--                    <x-slot name="content">--}}
-{{--                        <x-dropdown-link :href="route('profile.edit')">--}}
-{{--                            {{ __('Profile') }}--}}
-{{--                        </x-dropdown-link>--}}
-
-{{--                        <!-- Authentication -->--}}
-{{--                        <form method="POST" action="{{ route('logout') }}">--}}
-{{--                            @csrf--}}
-
-{{--                            <x-dropdown-link :href="route('logout')"--}}
-{{--                                    onclick="event.preventDefault();--}}
-{{--                                                this.closest('form').submit();">--}}
-{{--                              Вийти--}}
-{{--                            </x-dropdown-link>--}}
-{{--                        </form>--}}
-{{--                    </x-slot>--}}
-{{--                </x-dropdown>--}}
-{{--            </div>--}}
-
-
-
-{{--    <div class="container-fluid">--}}
-{{--    <!-- Responsive Navigation Menu -->--}}
-{{--    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">--}}
-{{--        <div class="pt-2 pb-3 space-y-1">--}}
-
-{{--        </div>--}}
-
-{{--        <!-- Responsive Settings Options -->--}}
-{{--        <div class="container-fluid pb-1 border-t border-gray-200">--}}
-{{--            <div class="px-4">--}}
-{{--                <div class="font-medium text-base text-gray-800"><b>Логін:</b>&ensp;{{ Auth::user()->name }}</div>--}}
-{{--                <div class="font-medium text-sm text-gray-500"><b>Email:</b>&ensp;{{ Auth::user()->email }}</div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mt-3 pb-1 space-y-1">--}}
-{{--                        <x-responsive-nav-link class="p2" :href="route('profile.edit')">--}}
-{{--                            <button type="button" class="btn btn-outline-info">--}}
-{{--                                <b>Мій профіль</b>--}}
-{{--                            </button>--}}
-{{--                        </x-responsive-nav-link>--}}
-
-
-
-{{--                <!-- Authentication -->--}}
-{{--                <div class="mt-3 pb-1 space-y-1">--}}
-{{--                <form method="POST" action="{{ route('logout') }}">--}}
-{{--                    @csrf--}}
-
-{{--                    <x-responsive-nav-link class="p2" :href="route('logout')"--}}
-{{--                            onclick="event.preventDefault();--}}
-{{--                                        this.closest('form').submit();">--}}
-{{--                        <button type="button" class="btn btn-outline-danger">--}}
-{{--                            <b>Вийти</b>--}}
-{{--                        </button>--}}
-{{--                    </x-responsive-nav-link>--}}
-{{--                </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--    </div>--}}
-{{--    </div>--}}
-{{--</nav>--}}
-{{--</div>--}}
-
 
 
 

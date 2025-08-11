@@ -27,8 +27,6 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/search', [PostController::class, 'search'])->name('posts.search');
-
     Route::resource('posts', PostController::class);
 
 
